@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" type="image/svg+xml" href="assets/kitusy-kite.svg">
+<title>Kitusy</title>
+<meta name="description" content="Kitusy — app semplici che rendono più leggero il lavoro e il tempo libero. Fatte a Messina.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600&family=Source+Sans+3:wght@400;600&display=swap">
+<style>
+/* Layout: proporzioni auree — colonne 1 : 1.618, scala tipografica in rapporto φ, sfondo = blu del logo */
+*{box-sizing:border-box}
+body{margin:0}
+:root{
+  --navy:#0B2A4A; --navy-2:#0F3560; --line:#24507d;
+  --ink:#FFFFFF; --muted:#A9C1DA;
+  --k-blue:#1F5FAF; --k-cyan:#26A9C9; --k-green:#4CAF7A; --k-amber:#F2A541; --k-red:#E4572E;
+  --f-display:"Lexend","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --f-body:"Source Sans 3","Segoe UI",system-ui,sans-serif;
+  --phi:1.618;
+  --s0:1rem; --s1:1.618rem; --s2:2.618rem; --s3:4.236rem;
+  color-scheme:dark;
+}
+html{background:var(--navy)}
+body{background:var(--navy);color:var(--ink);font-family:var(--f-body);font-size:1.0625rem;line-height:1.6}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--navy)}
+.wrap{max-width:68rem;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:var(--k-cyan)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--k-amber);outline-offset:3px;border-radius:4px}
+
+/* Header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--navy) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:var(--s0);padding-block:.7rem}
+.brand{display:flex;align-items:center;gap:.6rem;color:var(--ink);text-decoration:none;font-family:var(--f-display);font-weight:400;font-size:1.25rem;letter-spacing:.01em}
+.brand svg{width:1.75rem;height:auto;display:block}
+nav{display:flex;align-items:center;gap:var(--s0);flex-wrap:wrap}
+nav a{color:var(--muted);text-decoration:none;font-size:.95rem}
+nav a:hover{color:var(--ink)}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.lang button{background:none;border:0;color:var(--muted);font:600 .75rem/1 var(--f-body);letter-spacing:.08em;padding:.45rem .7rem;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--navy)}
+
+/* Hero */
+.hero .wrap{display:grid;grid-template-columns:1fr 1.618fr;align-items:center;gap:var(--s2);padding-block:var(--s3) var(--s2)}
+.hero-logo svg{width:100%;max-width:22rem;height:auto;display:block;margin-inline:auto}
+.hero h1{font-family:var(--f-display);font-weight:300;font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.12;margin:0 0 var(--s0);text-wrap:balance}
+.hero h1 b{font-weight:600}
+.hero p{color:var(--muted);font-size:1.2rem;max-width:34em;margin:0}
+.stripe{display:flex;height:4px;max-width:12rem;margin-top:var(--s1);border-radius:2px;overflow:hidden}
+.stripe i{flex:1}
+@media (max-width:720px){.hero .wrap{grid-template-columns:1fr;padding-block:var(--s2)}.hero-logo svg{max-width:13rem}}
+
+/* Sections */
+section.block .wrap{padding-block:var(--s2)}
+.eyebrow{font:600 .75rem/1 var(--f-body);letter-spacing:.14em;text-transform:uppercase;color:var(--k-amber);margin:0 0 .6rem}
+h2{font-family:var(--f-display);font-weight:400;font-size:clamp(1.6rem,3vw,2.2rem);margin:0 0 var(--s1);text-wrap:balance}
+
+/* Apps */
+.apps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,19rem),1fr));gap:var(--s1)}
+.app{background:var(--navy-2);border:1px solid var(--line);border-radius:14px;padding:var(--s1);display:flex;flex-direction:column;gap:.8rem;min-width:0}
+.app-head{display:flex;align-items:center;gap:.9rem}
+.app-icon{width:3.2rem;height:3.2rem;border-radius:.8rem;display:grid;place-items:center;font:600 1.4rem/1 var(--f-display);color:#fff;flex:none}
+.app h3{font-family:var(--f-display);font-weight:600;font-size:1.3rem;margin:0}
+.app .meaning{color:var(--muted);font-size:.9rem;font-style:italic;margin:0}
+.app p.desc{margin:0}
+.platforms{display:flex;flex-wrap:wrap;gap:.4rem;margin:0;padding:0;list-style:none}
+.platforms li{font-size:.78rem;letter-spacing:.04em;border:1px solid var(--line);border-radius:999px;padding:.15rem .6rem;color:var(--muted)}
+.status{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:.6rem;flex-wrap:wrap;padding-top:.4rem;border-top:1px solid var(--line)}
+.pill{font:600 .75rem/1 var(--f-body);letter-spacing:.06em;text-transform:uppercase;padding:.4rem .65rem;border-radius:999px}
+.pill.live{background:color-mix(in srgb,var(--k-green) 22%,transparent);color:#8fe0b2}
+.pill.dev{background:color-mix(in srgb,var(--k-amber) 20%,transparent);color:#f7c47d}
+.btn{display:inline-flex;align-items:center;gap:.4rem;background:var(--ink);color:var(--navy);text-decoration:none;font-weight:600;font-size:.9rem;padding:.5rem .9rem;border-radius:999px}
+.btn:hover{background:var(--k-cyan);color:#fff}
+.app.more{background:none;border-style:dashed;justify-content:center;text-align:center;color:var(--muted)}
+
+/* Philosophy */
+.ideas{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,15rem),1fr));gap:var(--s1)}
+.idea{min-width:0;padding-left:var(--s0);border-left:3px solid var(--c)}
+.idea h3{font-family:var(--f-display);font-weight:600;font-size:1.1rem;margin:0 0 .3rem}
+.idea p{margin:0;color:var(--muted)}
+
+/* Contacts */
+.contacts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr));gap:var(--s0)}
+.contact{background:var(--navy-2);border:1px solid var(--line);border-radius:12px;padding:var(--s0) var(--s1);min-width:0}
+.contact span{display:block;font-size:.85rem;color:var(--muted)}
+.contact code{font-family:var(--f-body);font-weight:600;font-size:1.05rem;user-select:all;overflow-wrap:anywhere}
+.copy{margin-top:.5rem;background:none;border:1px solid var(--line);color:var(--muted);border-radius:999px;font:600 .75rem/1 var(--f-body);padding:.35rem .7rem;cursor:pointer}
+.copy:hover{color:var(--ink);border-color:var(--ink)}
+
+footer{border-top:1px solid var(--line);margin-top:var(--s2)}
+footer .wrap{display:flex;justify-content:space-between;gap:var(--s0);flex-wrap:wrap;padding-block:var(--s1);color:var(--muted);font-size:.85rem}
+@media (prefers-reduced-motion:no-preference){.app{transition:transform .25s,border-color .25s}.app:hover{transform:translateY(-3px);border-color:var(--k-cyan)}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Kitusy"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="206 128 250 400"><g transform="translate(201 74)">
+<g transform="rotate(38.17 130 154.6)">
+<path d="M130 340 L39.9 225.4 A485.5 485.5 0 0 1 121.52 143.82 L130 154.6 Z" fill="#1F5FAF"/>
+<path d="M39.9 225.4 L130 40 L130 154.6 L121.52 143.82 A485.5 485.5 0 0 0 39.9 225.4 Z" fill="#26A9C9"/>
+<polygon points="130,40 220.1,83.8 130,154.6" fill="#4CAF7A"/>
+<path d="M130 154.6 Q151.3 184.5 175.5 210.5 L220.1 83.8 Z" fill="#F2A541"/>
+<path d="M130 154.6 Q151.3 184.5 175.5 210.5 L130 340 Z" fill="#E4572E"/>
+<path d="M130 40 A1270.9 1270.9 0 0 1 130 340 A1270.9 1270.9 0 0 1 130 40 Z" fill="#FFFFFF"/>
+<path d="M121.52 143.82 A485.5 485.5 0 0 1 220.1 83.8 A785.5 785.5 0 0 1 135.19 161.2 Z" fill="#FFFFFF"/>
+<path d="M135.7 150.54 Q223.55 279.87 365.8 340 Q217.85 283.93 124.3 158.66 Z" fill="#FFFFFF"/>
+</g>
+</g></svg><span>Kitusy</span></a>
+    <nav>
+      <a href="#app" data-i18n="nav_apps">App</a>
+      <a href="#idea" data-i18n="nav_idea">Filosofia</a>
+      <a href="#contatti" data-i18n="nav_contact">Contatti</a>
+      <div class="lang" role="group" aria-label="Lingua / Language">
+        <button type="button" id="lang-it" data-lang="it" aria-pressed="true">IT</button>
+        <button type="button" id="lang-en" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-logo"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 720">
+<title>Logo Kitusy</title>
+<g transform="translate(-31.00 0)">
+<g transform="translate(201 74)">
+<g transform="rotate(38.17 130 154.6)">
+<path d="M130 340 L39.9 225.4 A485.5 485.5 0 0 1 121.52 143.82 L130 154.6 Z" fill="#1F5FAF"/>
+<path d="M39.9 225.4 L130 40 L130 154.6 L121.52 143.82 A485.5 485.5 0 0 0 39.9 225.4 Z" fill="#26A9C9"/>
+<polygon points="130,40 220.1,83.8 130,154.6" fill="#4CAF7A"/>
+<path d="M130 154.6 Q151.3 184.5 175.5 210.5 L220.1 83.8 Z" fill="#F2A541"/>
+<path d="M130 154.6 Q151.3 184.5 175.5 210.5 L130 340 Z" fill="#E4572E"/>
+<path d="M130 40 A1270.9 1270.9 0 0 1 130 340 A1270.9 1270.9 0 0 1 130 40 Z" fill="#FFFFFF"/>
+<path d="M121.52 143.82 A485.5 485.5 0 0 1 220.1 83.8 A785.5 785.5 0 0 1 135.19 161.2 Z" fill="#FFFFFF"/>
+<path d="M135.7 150.54 Q223.55 279.87 365.8 340 Q217.85 283.93 124.3 158.66 Z" fill="#FFFFFF"/>
+</g>
+</g>
+<path transform="translate(214.952 564.88) scale(0.084 -0.084)" d="M511.25 0 161.25 361.75 503.75 694H626.25L255.5 337.5V390L636.25 0ZM81.75 0V694H176V0Z" fill="#FFFFFF"/>
+<path transform="translate(271.396 564.88) scale(0.084 -0.084)" d="M66.5 0V475H156.75V0ZM111.5 569.75Q87.25 569.75 71.125 586.5Q55 603.25 55 627.5Q55 652 71.125 668.5Q87.25 685 111.5 685Q136.75 685 152.625 668.5Q168.5 652 168.5 627.5Q168.5 603.25 152.625 586.5Q136.75 569.75 111.5 569.75Z" fill="#FFFFFF"/>
+<path transform="translate(290.712 564.88) scale(0.084 -0.084)" d="M138.75 0V674H229V0ZM22 393.25V475H345.5V393.25Z" fill="#FFFFFF"/>
+<path transform="translate(322.124 564.88) scale(0.084 -0.084)" d="M257.5 -10Q198.54676258992805 -10 152.14838129496403 16.625Q105.75 43.25 79.875 90.13454653937947Q54 137.01909307875894 54 198.84486873508354V475H144.25V202.75Q144.25 163.75 157.75 135.5Q171.25 107.25 197.0 91.875Q222.75 76.5 257.74568965517244 76.5Q311 76.5 340.875 110.125Q370.75 143.75 370.75 202.75V475H461V198.75Q461 136.75 435.125 89.625Q409.25 42.5 363.3974820143885 16.25Q317.544964028777 -10 257.5 -10Z" fill="#FFFFFF"/>
+<path transform="translate(365.968 564.88) scale(0.084 -0.084)" d="M216.5 -10Q177.25 -10 141.375 0.5Q105.5 11 75.75 30.25Q46 49.5 23.75 76.5L81.5 134.5Q107.75 103 141.875 87.5Q176 72 218.25 72Q260.25 72 283.0 86.375Q305.75 100.75 305.75 127.25Q305.75 153.25 287.375 167.75Q269 182.25 239.875 191.625Q210.75 201 178.5 210.25Q146.25 219.5 117.125 234.5Q88 249.5 69.625 275.875Q51.25 302.25 51.25 345Q51.25 388 71.875 419.25Q92.5 450.5 130.375 467.75Q168.25 485 220.75 485Q276.5 485 320.125 465.25Q363.75 445.5 392 406.5L334.25 348.75Q313.5 375.25 284.25 389.125Q255 403 217.75 403Q179 403 158.25 389.25Q137.5 375.5 137.5 352Q137.5 328.25 155.875 315.0Q174.25 301.75 203.375 293.0Q232.5 284.25 264.75 274.75Q297 265.25 326.125 249.25Q355.25 233.25 373.625 206.25Q392 179.25 392 135Q392 68.25 344.625 29.125Q297.25 -10 216.5 -10Z" fill="#FFFFFF"/>
+<polygon points="401.7,520 420.95,565.2 423.54,553.3" fill="#FFFFFF"/>
+<polygon points="420.95,565.2 423.54,553.3 435.71,525 444.11,525 425.48,565.2" fill="#FFFFFF"/>
+<polygon points="409.55,581.6 421.24,557.5 425.48,565.2 417.92,581.6" fill="#FFFFFF"/>
+</g>
+</svg>
+</div>
+      <div>
+        <h1 data-i18n-html="hero_title">App che <b>alleggeriscono</b> il lavoro e il tempo libero.</h1>
+        <p data-i18n="hero_text">Strumenti semplici per fare bene le cose di ogni giorno: i conti di casa, l'archivio dei file, il lavoro tecnico. Pensati per chi vuole risultati, non complicazioni.</p>
+        <div class="stripe" aria-hidden="true"><i style="background:var(--k-blue)"></i><i style="background:var(--k-cyan)"></i><i style="background:var(--k-green)"></i><i style="background:var(--k-amber)"></i><i style="background:var(--k-red)"></i></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="app">
+    <div class="wrap">
+      <p class="eyebrow" data-i18n="apps_eyebrow">Le nostre app</p>
+      <h2 data-i18n="apps_title">Un kit di strumenti facili</h2>
+      <div class="apps">
+        <article class="app">
+          <div class="app-head">
+            <div class="app-icon" style="background:linear-gradient(135deg,var(--k-green),#2E7D32)" aria-hidden="true">P</div>
+            <div><h3>Pìcciuli</h3><p class="meaning" data-i18n="picciuli_meaning">“soldi”, in siciliano</p></div>
+          </div>
+          <p class="desc" data-i18n="picciuli_desc">Le finanze personali sotto controllo: conti, carte, movimenti ricorrenti, spese condivise e un radar che mostra a colpo d'occhio dove vanno i tuoi soldi.</p>
+          <ul class="platforms"><li>Mac</li><li>iPhone</li><li>iPad</li></ul>
+          <div class="status">
+            <span class="pill live" data-i18n="status_live">Disponibile</span>
+            <a class="btn" id="picciuli-store" href="https://apps.apple.com/" target="_blank" rel="noopener">App Store ↗</a>
+          </div>
+        </article>
+        <article class="app">
+          <div class="app-head">
+            <div class="app-icon" style="background:linear-gradient(135deg,var(--k-cyan),var(--k-blue))" aria-hidden="true">A</div>
+            <div><h3>Aunnè</h3><p class="meaning" data-i18n="aunne_meaning">“dov'è?”, in siciliano</p></div>
+          </div>
+          <p class="desc" data-i18n="aunne_desc">Rimette in ordine i file sparsi tra dischi, chiavette, telefono e cloud: trova i doppioni, ricostruisce le date e propone un archivio cronologico, senza formattare nulla.</p>
+          <ul class="platforms"><li>macOS</li><li>Windows</li><li>Linux</li></ul>
+          <div class="status"><span class="pill dev" data-i18n="status_dev">In sviluppo</span></div>
+        </article>
+        <article class="app more">
+          <p data-i18n="more">Altre app sono in cantiere, anche per i professionisti dell'edilizia.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="idea">
+    <div class="wrap">
+      <p class="eyebrow" data-i18n="idea_eyebrow">Filosofia</p>
+      <h2 data-i18n="idea_title">Leggere come un aquilone</h2>
+      <div class="ideas">
+        <div class="idea" style="--c:var(--k-cyan)"><h3 data-i18n="i1_t">Facili</h3><p data-i18n="i1_d">Ogni funzione si capisce al primo uso. Se serve un manuale, l'abbiamo progettata male.</p></div>
+        <div class="idea" style="--c:var(--k-green)"><h3 data-i18n="i2_t">Rispettose</h3><p data-i18n="i2_d">I tuoi dati restano tuoi. Niente pubblicità, niente profilazione.</p></div>
+        <div class="idea" style="--c:var(--k-amber)"><h3 data-i18n="i3_t">Curate</h3><p data-i18n="i3_d">Disegno e proporzioni contano: anche il nostro logo nasce dalla sezione aurea.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="contatti">
+    <div class="wrap">
+      <p class="eyebrow" data-i18n="contact_eyebrow">Contatti</p>
+      <h2 data-i18n="contact_title">Scrivici</h2>
+      <div class="contacts">
+        <div class="contact"><span data-i18n="c_support">Assistenza sulle app</span><code id="mail-support">supporto@kitusy.com</code><br><button class="copy" type="button" data-copy="mail-support" data-i18n="copy">Copia</button></div>
+        <div class="contact"><span data-i18n="c_report">Segnalazioni e bug</span><code id="mail-report">segnalazioni@kitusy.com</code><br><button class="copy" type="button" data-copy="mail-report" data-i18n="copy">Copia</button></div>
+        <div class="contact"><span data-i18n="c_info">Collaborazioni e informazioni</span><code id="mail-info">info@kitusy.com</code><br><button class="copy" type="button" data-copy="mail-info" data-i18n="copy">Copia</button></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="year">2026</span> Kitusy · <span data-i18n="made">Fatto a Messina</span></span>
+    <span data-i18n="tagline">Kit easy, life easy.</span>
+  </div>
+</footer>
+
+<script>
+const T={
+ en:{nav_apps:"Apps",nav_idea:"Philosophy",nav_contact:"Contact",
+  hero_title:"Apps that make work and free time <b>lighter</b>.",
+  hero_text:"Simple tools to do everyday things well: household finances, your file archive, technical work. Made for people who want results, not complications.",
+  apps_eyebrow:"Our apps",apps_title:"A kit of easy tools",
+  picciuli_meaning:"“money”, in Sicilian",
+  picciuli_desc:"Personal finances under control: accounts, cards, recurring transactions, shared expenses and a radar that shows at a glance where your money goes.",
+  aunne_meaning:"“where is it?”, in Sicilian",
+  aunne_desc:"Tidies up files scattered across drives, USB sticks, phone and cloud: finds duplicates, rebuilds dates and suggests a chronological archive, without formatting anything.",
+  status_live:"Available",status_dev:"In development",
+  more:"More apps are on the way, including tools for building professionals.",
+  idea_eyebrow:"Philosophy",idea_title:"Light as a kite",
+  i1_t:"Easy",i1_d:"Every feature makes sense the first time you use it. If it needs a manual, we designed it wrong.",
+  i2_t:"Respectful",i2_d:"Your data stays yours. No ads, no profiling.",
+  i3_t:"Crafted",i3_d:"Design and proportion matter: even our logo is built on the golden ratio.",
+  contact_eyebrow:"Contact",contact_title:"Write to us",
+  c_support:"App support",c_report:"Bug reports",c_info:"Partnerships and information",
+  copy:"Copy",copied:"Copied",made:"Made in Messina, Italy",tagline:"Kit easy, life easy."},
+ it:{}
+};
+document.querySelectorAll("[data-i18n]").forEach(e=>T.it[e.dataset.i18n]=e.textContent);
+document.querySelectorAll("[data-i18n-html]").forEach(e=>T.it[e.dataset.i18nHtml]=e.innerHTML);
+T.it.copied="Copiato";
+function setLang(l){
+  document.documentElement.lang=l;
+  document.querySelectorAll("[data-i18n]").forEach(e=>{const v=T[l][e.dataset.i18n];if(v)e.textContent=v});
+  document.querySelectorAll("[data-i18n-html]").forEach(e=>{const v=T[l][e.dataset.i18nHtml];if(v)e.innerHTML=v});
+  document.querySelectorAll(".lang button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.lang===l));
+  try{localStorage.setItem("kitusy-lang",l)}catch(e){}
+}
+document.querySelectorAll(".lang button").forEach(b=>b.addEventListener("click",()=>setLang(b.dataset.lang)));
+let start="it";
+try{start=localStorage.getItem("kitusy-lang")||((navigator.language||"it").startsWith("it")?"it":"en")}catch(e){}
+if(start!=="it")setLang(start);
+document.querySelectorAll(".copy").forEach(b=>b.addEventListener("click",()=>{
+  const el=document.getElementById(b.dataset.copy),l=document.documentElement.lang==="en"?"en":"it";
+  const done=()=>{b.textContent=T[l].copied;setTimeout(()=>b.textContent=T[l].copy,1500)};
+  const sel=()=>{const r=document.createRange();r.selectNodeContents(el);const s=getSelection();s.removeAllRanges();s.addRange(r)};
+  if(navigator.clipboard)navigator.clipboard.writeText(el.textContent).then(done,sel);else sel();
+}));
+document.getElementById("year").textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
