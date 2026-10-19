@@ -61,7 +61,8 @@ h2{font-family:var(--f-display);font-weight:400;font-size:clamp(1.6rem,3vw,2.2re
 .apps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,19rem),1fr));gap:var(--s1)}
 .app{background:var(--navy-2);border:1px solid var(--line);border-radius:14px;padding:var(--s1);display:flex;flex-direction:column;gap:.8rem;min-width:0}
 .app-head{display:flex;align-items:center;gap:.9rem}
-.app-icon{width:3.2rem;height:3.2rem;border-radius:.8rem;display:grid;place-items:center;font:600 1.4rem/1 var(--f-display);color:#fff;flex:none}
+.app-icon{width:3.6rem;height:3.6rem;border-radius:.9rem;display:grid;place-items:center;font:600 1.4rem/1 var(--f-display);color:#fff;flex:none;overflow:hidden}
+.app-icon img{width:100%;height:100%;object-fit:cover;display:block}
 .app h3{font-family:var(--f-display);font-weight:600;font-size:1.3rem;margin:0}
 .app .meaning{color:var(--muted);font-size:.9rem;font-style:italic;margin:0}
 .app p.desc{margin:0}
@@ -185,6 +186,23 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--s0);flex-wrap:
           <ul class="platforms"><li>macOS</li><li>Windows</li><li>Linux</li></ul>
           <div class="status"><span class="pill dev" data-i18n="status_dev">In sviluppo</span></div>
         </article>
+        <article class="app">
+          <div class="app-head">
+            <div class="app-icon" aria-hidden="true"><img src="assets/cartanza.png" alt=""></div>
+            <div><h3>Cartanza</h3><p class="meaning" data-i18n="cartanza_meaning">giochi di carte italiani</p></div>
+          </div>
+          <p class="desc" data-i18n="cartanza_desc">Scopa e Briscola con gli amici, da vicino e da lontano: tavoli aperti o sfide private, messaggi vocali e foto durante la partita, come al tavolino del bar.</p>
+          <ul class="platforms"><li>iPhone</li><li>iPad</li><li>Mac</li></ul>
+          <div class="status"><span class="pill dev" data-i18n="status_dev">In sviluppo</span></div>
+        </article>
+        <article class="app">
+          <div class="app-head">
+            <div class="app-icon" aria-hidden="true"><img src="assets/cuntari.png" alt=""></div>
+            <div><h3>Cuntàri</h3><p class="meaning" data-i18n="cuntari_meaning">“raccontare”, in siciliano</p></div>
+          </div>
+          <p class="desc" data-i18n="cuntari_desc">Per chi ama scrivere e raccontare storie.</p>
+          <div class="status"><span class="pill dev" data-i18n="status_dev">In sviluppo</span></div>
+        </article>
         <article class="app more">
           <p data-i18n="more">Altre app sono in cantiere, anche per i professionisti dell'edilizia.</p>
         </article>
@@ -232,6 +250,10 @@ const T={
   apps_eyebrow:"Our apps",apps_title:"A kit of easy tools",
   picciuli_meaning:"“money”, in Sicilian",
   picciuli_desc:"Personal finances under control: accounts, cards, recurring transactions, shared expenses and a radar that shows at a glance where your money goes.",
+  cartanza_meaning:"Italian card games",
+  cartanza_desc:"Scopa and Briscola with friends, near or far: open tables or private matches, voice messages and photos during the game, just like at the café table.",
+  cuntari_meaning:"“to tell stories”, in Sicilian",
+  cuntari_desc:"For people who love to write and tell stories.",
   aunne_meaning:"“where is it?”, in Sicilian",
   aunne_desc:"Tidies up files scattered across drives, USB sticks, phone and cloud: finds duplicates, rebuilds dates and suggests a chronological archive, without formatting anything.",
   status_live:"Available",status_dev:"In development",
