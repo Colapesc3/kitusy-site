@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+<title>Aunnè</title>
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0E3B5C"/><stop offset="1" stop-color="#0A2540"/></linearGradient>
+<radialGradient id="sweep" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#26A9C9" stop-opacity="0.55"/><stop offset="1" stop-color="#26A9C9" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="256" height="256" fill="url(#bg)"/>
+<g fill="none" stroke="#26A9C9" stroke-opacity="0.45" stroke-width="3">
+<circle cx="128" cy="128" r="40"/><circle cx="128" cy="128" r="72"/><circle cx="128" cy="128" r="104"/>
+</g>
+<path d="M128 128 L128 24 A104 104 0 0 1 218 76 Z" fill="url(#sweep)"/>
+<g stroke="#0A2540" stroke-width="3">
+<rect x="58" y="150" width="34" height="42" rx="5" fill="#4CAF7A"/>
+<rect x="66" y="142" width="34" height="42" rx="5" fill="#4CAF7A" opacity="0.6"/>
+<rect x="163" y="162" width="30" height="38" rx="5" fill="#1F5FAF"/>
+</g>
+<path d="M152 112 a26 26 0 1 1 52 0 c0 20 -26 46 -26 46 s-26 -26 -26 -46z" fill="#F2A541" stroke="#0A2540" stroke-width="4"/>
+<circle cx="178" cy="112" r="9" fill="#0A2540"/>
+<circle cx="128" cy="128" r="6" fill="#FFFFFF"/>
+</svg>
