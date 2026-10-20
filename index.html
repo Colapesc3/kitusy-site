@@ -74,6 +74,8 @@ h2{font-family:var(--f-display);font-weight:400;font-size:clamp(1.6rem,3vw,2.2re
 .pill.dev{background:color-mix(in srgb,var(--k-amber) 20%,transparent);color:#f7c47d}
 .btn{display:inline-flex;align-items:center;gap:.4rem;background:var(--ink);color:var(--navy);text-decoration:none;font-weight:600;font-size:.9rem;padding:.5rem .9rem;border-radius:999px}
 .btn:hover{background:var(--k-cyan);color:#fff}
+.link-sm{color:var(--muted);font-size:.85rem;margin-left:auto}
+.link-sm:hover{color:var(--ink)}
 .app.more{background:none;border-style:dashed;justify-content:center;text-align:center;color:var(--muted)}
 
 /* Philosophy */
@@ -174,6 +176,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--s0);flex-wrap:
           <ul class="platforms"><li>Mac</li><li>iPhone</li><li>iPad</li></ul>
           <div class="status">
             <span class="pill live" data-i18n="status_live">Disponibile</span>
+            <a class="link-sm" href="picciuli/privacy.html" data-i18n="privacy">Privacy</a>
             <a class="btn" id="picciuli-store" href="https://apps.apple.com/it/app/p%C3%ACcciuli/id6793956859" target="_blank" rel="noopener">App Store ↗</a>
           </div>
         </article>
@@ -257,7 +260,7 @@ const T={
   cuntari_desc:"The writing tool for people who build noir and crime stories: a visual mind map, plots and characters always under control, an AI assistant at your side.",
   aunne_meaning:"“where is it?”, in Sicilian",
   aunne_desc:"Tidies up files scattered across drives, USB sticks, phone and cloud: finds duplicates, rebuilds dates and suggests a chronological archive, without formatting anything.",
-  status_live:"Available",status_dev:"In development",
+  status_live:"Available",privacy:"Privacy",status_dev:"In development",
   more:"More apps are on the way, including tools for building professionals.",
   idea_eyebrow:"Philosophy",idea_title:"Light as a kite",
   i1_t:"Easy",i1_d:"Every feature makes sense the first time you use it. If it needs a manual, we designed it wrong.",
