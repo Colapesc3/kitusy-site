@@ -97,9 +97,11 @@ h2{font-family:var(--f-display);font-weight:400;font-size:clamp(1.6rem,3vw,2.2re
 .idea p{margin:0;color:var(--muted)}
 
 /* Contacts */
-.contacts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr));gap:var(--s0)}
+.contacts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,14rem),1fr));gap:var(--s0)}
 .contact{background:var(--navy-2);border:1px solid var(--line);border-radius:12px;padding:var(--s0) var(--s1);min-width:0}
 .contact span{display:block;font-size:.85rem;color:var(--muted)}
+.contact span a{color:var(--muted)}
+.contact span a:hover{color:var(--ink)}
 .contact code{font-family:var(--f-body);font-weight:600;font-size:1.05rem;user-select:all;overflow-wrap:anywhere}
 .copy{margin-top:.5rem;background:none;border:1px solid var(--line);color:var(--muted);border-radius:999px;font:600 .75rem/1 var(--f-body);padding:.35rem .7rem;cursor:pointer}
 .copy:hover{color:var(--ink);border-color:var(--ink)}
@@ -251,7 +253,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--s0);flex-wrap:
       <div class="contacts">
         <div class="contact"><span data-i18n="c_support">Assistenza sulle app</span><code id="mail-support">supporto@kitusy.com</code><br><button class="copy" type="button" data-copy="mail-support" data-i18n="copy">Copia</button></div>
         <div class="contact"><span data-i18n="c_report">Segnalazioni e bug</span><code id="mail-report">segnalazioni@kitusy.com</code><br><button class="copy" type="button" data-copy="mail-report" data-i18n="copy">Copia</button></div>
-        <div class="contact"><span data-i18n="c_info">Collaborazioni e informazioni</span><code id="mail-info">info@kitusy.com</code><br><button class="copy" type="button" data-copy="mail-info" data-i18n="copy">Copia</button></div>
+        <div class="contact"><span data-i18n="c_info">Informazioni</span><code id="mail-info">info@kitusy.com</code><br><button class="copy" type="button" data-copy="mail-info" data-i18n="copy">Copia</button></div>
+        <div class="contact"><span><a href="collabora" data-i18n="c_work">Collabora con noi</a></span><code id="mail-work">collabora@kitusy.com</code><br><button class="copy" type="button" data-copy="mail-work" data-i18n="copy">Copia</button></div>
       </div>
     </div>
   </section>
@@ -291,7 +294,7 @@ const T={
   i2_t:"Respectful",i2_d:"Your data stays yours. No ads, no profiling.",
   i3_t:"Crafted",i3_d:"Design and proportion matter: even our logo is built on the golden ratio.",
   contact_eyebrow:"Contact",contact_title:"Write to us",
-  c_support:"App support",c_report:"Bug reports",c_info:"Partnerships and information",
+  c_support:"App support",c_report:"Bug reports",c_info:"Information",c_work:"Work with us",
   copy:"Copy",copied:"Copied",tagline:"Kit easy, life easy.",site_privacy:"Site privacy",work:"Work with us"},
  it:{}
 };
