@@ -40,6 +40,8 @@ h2{font-family:var(--f-display);font-weight:600;font-size:1.15rem;margin:var(--s
 p{margin:0 0 var(--s0)}
 .stripe{display:flex;height:4px;max-width:12rem;margin:0 0 var(--s1);border-radius:2px;overflow:hidden}
 .stripe i{flex:1}
+ul{margin:0 0 var(--s0);padding-left:1.3rem}
+li{margin-bottom:.4rem}
 footer{border-top:1px solid var(--line)}
 footer .wrap{display:flex;justify-content:space-between;gap:var(--s0);flex-wrap:wrap;padding-block:var(--s1);color:var(--muted);font-size:.85rem;max-width:68rem}
 footer a{color:var(--muted)}
@@ -62,31 +64,43 @@ footer a{color:var(--muted)}
         <h1>Informativa sulla Privacy di Pìcciuli</h1>
       </div>
     </div>
-    <p class="updated">Ultimo aggiornamento: 23 luglio 2026</p>
+    <p class="updated">Ultimo aggiornamento: 24 ottobre 2026</p>
     <div class="stripe" aria-hidden="true"><i style="background:var(--k-blue)"></i><i style="background:var(--k-cyan)"></i><i style="background:var(--k-green)"></i><i style="background:var(--k-amber)"></i><i style="background:var(--k-red)"></i></div>
 
-    <p>Pìcciuli è un'app di gestione finanziaria personale sviluppata per macOS, iPhone e iPad. La tua privacy è una priorità: questa pagina spiega quali dati vengono trattati e come.</p>
+    <p>Pìcciuli è un'app di gestione finanziaria personale per iPhone, iPad, Mac e Android. La tua privacy è una priorità: questa pagina spiega quali dati vengono trattati, dove e da chi.</p>
 
     <h2>Dati raccolti</h2>
-    <p>Pìcciuli non raccoglie né trasmette a server esterni i tuoi dati finanziari (conti, movimenti, categorie, budget, scenari). Tutti i dati vengono salvati esclusivamente sul tuo dispositivo, in locale.</p>
+    <p>Pìcciuli non ha server. I tuoi dati finanziari (conti, movimenti, categorie, budget, scenari) vengono salvati sul tuo dispositivo. Lo sviluppatore non li riceve e non può consultarli. L'app non contiene pubblicità né strumenti di tracciamento e non richiede la creazione di un account.</p>
 
-    <h2>Sincronizzazione iCloud</h2>
-    <p>Se attivi la sincronizzazione tra i tuoi dispositivi Apple, i dati vengono trasferiti tramite CloudKit di Apple, esclusivamente nel tuo account iCloud personale. Nessuno sviluppatore o terza parte ha accesso a questi dati.</p>
+    <h2>Sincronizzazione tra dispositivi (facoltativa)</h2>
+    <p>Puoi scegliere tra due modalità, entrambe disattivabili:</p>
+    <ul>
+      <li><strong>iCloud</strong> (solo dispositivi Apple, da iOS 17): i dati passano tramite CloudKit di Apple e restano nel database privato del tuo account iCloud.</li>
+      <li><strong>File</strong>: i dati vengono salvati in un file Pìcciuli in un servizio cloud scelto da te (ad esempio iCloud Drive, Google Drive, OneDrive o MEGA), nel tuo account. È la modalità che permette di sincronizzare anche i dispositivi Android. Il file è soggetto alle condizioni del servizio cloud che hai scelto.</li>
+    </ul>
+    <p>In entrambi i casi lo sviluppatore non ha accesso ai tuoi dati.</p>
 
-    <h2>Funzioni con intelligenza artificiale (opzionali)</h2>
-    <p>Se scegli di configurare e attivare le funzioni di analisi basate su intelligenza artificiale, alcuni dati selezionati vengono inviati al provider AI da te configurato, unicamente per generare l'analisi richiesta. Questa funzione è disattivata di default e richiede una configurazione esplicita da parte tua.</p>
+    <h2>Invio di movimenti e file</h2>
+    <p>Se scegli di inviare un movimento o di salvare una copia dei tuoi dati, il file viene trasmesso solo ai destinatari e con i mezzi che scegli tu (ad esempio Messaggi, email o un servizio cloud).</p>
+
+    <h2>Funzioni con intelligenza artificiale (facoltative)</h2>
+    <p>Le funzioni di analisi con intelligenza artificiale sono disattivate finché non le configuri.</p>
+    <ul>
+      <li><strong>Apple Intelligence</strong>: sui dispositivi compatibili l'analisi viene eseguita sul dispositivo.</li>
+      <li><strong>Claude (Anthropic) od OpenAI</strong>: se inserisci una tua chiave, l'app invia direttamente dal tuo dispositivo al fornitore scelto riepiloghi dei tuoi dati (ad esempio totali per categoria e periodo) e i messaggi che scrivi nella chat, solo per generare la risposta richiesta. L'archivio completo non viene mai inviato. Questi dati sono trattati dal fornitore secondo le sue condizioni e la sua informativa sulla privacy; lo sviluppatore di Pìcciuli non li riceve.</li>
+    </ul>
 
     <h2>Sincronizzazione con il Calendario</h2>
-    <p>Se attivi la sincronizzazione con il Calendario di sistema, l'app crea eventi nel Calendario da te scelto (Apple Calendar o Google Calendar, se configurato sul dispositivo). Questa funzione richiede la tua autorizzazione esplicita tramite le impostazioni di sistema.</p>
+    <p>Se attivi la sincronizzazione con il Calendario di sistema, l'app crea eventi nel calendario da te scelto. Questa funzione richiede la tua autorizzazione esplicita tramite le impostazioni di sistema.</p>
 
     <h2>Dati condivisi con terze parti</h2>
-    <p>Pìcciuli non vende né condivide i tuoi dati con terze parti per finalità pubblicitarie o di marketing.</p>
+    <p>Pìcciuli non vende né condivide i tuoi dati con terze parti per finalità pubblicitarie o di marketing. I dati arrivano a servizi esterni solo se attivi tu una delle funzioni descritte sopra: Apple iCloud, il servizio cloud che scegli per la sincronizzazione con file, il fornitore di intelligenza artificiale di cui inserisci la chiave.</p>
 
     <h2>Diritti dell'utente</h2>
-    <p>Poiché i tuoi dati restano sul tuo dispositivo (o nel tuo iCloud personale), hai pieno controllo su di essi in ogni momento: puoi esportarli, cancellarli o eliminare l'app per rimuoverli completamente.</p>
+    <p>Poiché i tuoi dati restano sul tuo dispositivo e nei servizi che scegli tu, ne hai il pieno controllo: puoi esportarli, cancellarli, disattivare la sincronizzazione o eliminare l'app per rimuoverli dal dispositivo. Per i dati salvati in iCloud, in un servizio cloud o presso un fornitore di intelligenza artificiale valgono anche gli strumenti messi a disposizione da quei servizi.</p>
 
     <h2>Contatti</h2>
-    <p>Per qualsiasi domanda su questa informativa, puoi contattare lo sviluppatore tramite la sezione Impostazioni dell'app.</p>
+    <p>Per qualsiasi domanda su questa informativa scrivi a <a href="mailto:supporto@kitusy.com">supporto@kitusy.com</a>.</p>
   </div>
 </main>
 
