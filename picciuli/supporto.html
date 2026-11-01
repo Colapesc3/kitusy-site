@@ -57,7 +57,7 @@ footer a{color:var(--muted)}
 <header>
   <div class="wrap">
     <a class="brand" href="../" aria-label="Kitusy, pagina principale"><img src="../assets/kitusy-kite.svg" alt=""><span>Kitusy</span></a>
-    <nav><a href="../#app">Tutte le app</a></nav>
+    <nav><a href="./">Pìcciuli</a> · <a href="en/support" hreflang="en" lang="en">English</a> · <a href="../#app">Tutte le app</a></nav>
   </div>
 </header>
 
@@ -84,25 +84,35 @@ footer a{color:var(--muted)}
 
   <p>Quando segnali un problema, indica se possibile: il dispositivo usato (iPhone, iPad o Mac), la versione del sistema operativo, la versione dell'app (la trovi in Impostazioni, in fondo alla schermata) e i passaggi che portano al problema.</p>
 
+  <p>Per una panoramica delle funzioni, con le foto dell'app, visita la <a href="./">pagina di Pìcciuli</a>. Dentro l'app trovi il manuale completo in Impostazioni → Aiuto → Manuale Utente.</p>
+
   <h2>Domande frequenti</h2>
 
   <h3>I miei dati finiscono su un server?</h3>
-  <p>No. Pìcciuli non ha server. L'archivio è conservato sul dispositivo e sincronizzato esclusivamente attraverso il database privato del tuo account iCloud. Lo sviluppatore non ha accesso ai tuoi dati e non li riceve in alcuna forma.</p>
+  <p>No. Pìcciuli non ha server. L'archivio è conservato sul dispositivo e, se attivi la sincronizzazione, nel database privato del tuo account iCloud oppure in un file Pìcciuli nel servizio cloud che scegli tu. I file dei dati e le copie di sicurezza sono cifrati sul dispositivo. Lo sviluppatore non ha accesso ai tuoi dati e non li riceve in alcuna forma.</p>
 
   <h3>Devo collegare il conto corrente della banca?</h3>
   <p>No, e non è possibile farlo. Pìcciuli non si collega ad alcun istituto bancario. I movimenti si inseriscono a mano, si generano automaticamente dalle regole ricorrenti, oppure si importano da un file CSV o XLSX scaricato dal tuo home banking.</p>
 
   <h3>Come funziona la sincronizzazione tra i dispositivi?</h3>
-  <p>Serve che i dispositivi siano collegati allo stesso Apple ID e che iCloud Drive sia attivo. La sincronizzazione avviene in secondo piano e può richiedere qualche minuto. Se un dato non compare subito su un altro dispositivo, apri l'app su entrambi e attendi: la sincronizzazione riprende all'apertura.</p>
+  <p>Puoi scegliere tra due modalità, dalle Impostazioni:</p>
+  <ul>
+    <li><strong>iCloud</strong>: i dispositivi devono usare lo stesso Apple ID, con iCloud Drive attivo.</li>
+    <li><strong>File nel cloud</strong>: i dati stanno in un file Pìcciuli in un servizio che scegli tu (ad esempio iCloud Drive, Google Drive, OneDrive o MEGA). Su ogni dispositivo apri lo stesso file.</li>
+  </ul>
+  <p>La nuvola accanto alle frecce Annulla/Ripristina (sul Mac nella barra della finestra) mostra se i dati sono sincronizzati: toccala per sincronizzare subito. La sincronizzazione avviene in secondo piano e può richiedere qualche minuto.</p>
 
   <h3>I dati sono al sicuro se cambio o perdo il dispositivo?</h3>
-  <p>Sì, purché la sincronizzazione iCloud sia attiva: installando l'app su un nuovo dispositivo con lo stesso Apple ID, i dati vengono ripristinati. È comunque consigliato esportare periodicamente un archivio di riserva dalle impostazioni dell'app.</p>
+  <p>Sì, se la sincronizzazione è attiva: con iCloud basta installare l'app con lo stesso Apple ID; con il file nel cloud basta riaprire lo stesso file. È comunque consigliato esportare periodicamente una copia di sicurezza dalle impostazioni dell'app.</p>
 
   <h3>Come faccio una copia di riserva dei miei dati?</h3>
-  <p>Dalle impostazioni dell'app puoi esportare un file di archivio. Conservalo dove preferisci: è la tua copia, leggibile solo da Pìcciuli, e può essere reimportato in qualsiasi momento.</p>
+  <p>Dalle impostazioni dell'app puoi esportare una copia di sicurezza; l'app ne crea anche di automatiche. La copia è cifrata: si apre solo con Pìcciuli e può essere ripristinata in qualsiasi momento.</p>
 
   <h3>Che differenza c'è tra gestione Personale e Professionale?</h3>
   <p>Sono due viste separate dello stesso archivio. Conti, categorie, aree e movimenti possono appartenere all'una, all'altra o a entrambe. Il selettore presente nelle schermate principali filtra tutto ciò che vedi: saldi, report, budget e statistiche. Serve a chi ha partita IVA per tenere separate le due contabilità senza usare due applicazioni.</p>
+
+  <h3>Come si legge il radar?</h3>
+  <p>Ogni Area di spesa è una nuvola: più si allunga, più ti avvicini al limite del mese. L'anello dorato è il tetto che hai scelto nel Budget, l'arco bianco è il limite con il risparmio o gli sforamenti dei mesi precedenti. I quattro cerchi del cruscotto dicono se sei in rotta, quali Aree hanno superato o supereranno il limite e quanto resta a fine mese. Il pulsante ⓘ sotto il radar mostra la legenda completa.</p>
 
   <h3>Come funzionano i movimenti ricorrenti?</h3>
   <p>Una regola ricorrente descrive un movimento che si ripete: stipendio, rata, abbonamento, utenza. L'app genera automaticamente le singole occorrenze future. Modificando un'occorrenza puoi scegliere se cambiare solo quella o tutte le successive. Le regole si gestiscono da Impostazioni, alla voce Ricorrenze.</p>
@@ -124,7 +134,7 @@ footer a{color:var(--muted)}
   <p>Se la attivi, le scadenze future vengono riportate come eventi in un calendario dedicato, con promemoria facoltativi. Puoi scegliere quali conti includere e da quale importo minimo. Disattivandola puoi rimuovere tutti gli eventi creati.</p>
 
   <h3>Posso provare l'app con dati di esempio?</h3>
-  <p>Sì. Scarica il <a href="/picciuli/demo/Picciuli-Demo.picciuli" download>file dimostrativo</a> (dati inventati: 14 mesi di movimenti personali e professionali, con conti, carte, ricorrenze e IVA) e aprilo con Pìcciuli, oppure importalo dalle impostazioni dell'app. Attenzione: l'importazione sostituisce l'archivio in uso, quindi provalo su un dispositivo senza dati tuoi o esporta prima una copia di riserva.</p>
+  <p>Sì. Apri Pìcciuli e scegli Impostazioni → Informazioni → <strong>Esplora con dati di esempio</strong>, oppure il pulsante nella procedura iniziale. Trovi movimenti personali e professionali inventati, con conti, carte, ricorrenze e IVA. I tuoi dati restano da parte, intatti, e tornano quando tocchi «Esci» nella fascia dorata. Mentre usi l'esempio, la sincronizzazione e le copie automatiche sono ferme.</p>
 
   <h3>L'app è gratuita?</h3>
   <p>Durante il periodo di lancio l'app è gratuita e completa. In seguito le funzioni principali resteranno gratuite, mentre alcune funzioni avanzate si sbloccheranno con un unico acquisto. Non sono previsti abbonamenti né pubblicità.</p>
@@ -133,7 +143,7 @@ footer a{color:var(--muted)}
   <p>iPhone, iPad e Mac. È la stessa applicazione, adattata a ciascun dispositivo.</p>
 
   <h3>L'app è disponibile per Android?</h3>
-  <p>Non ancora.</p>
+  <p>La versione per Android è in preparazione.</p>
 
   <h2>Segnalare un problema o proporre una funzione</h2>
   <p>Ogni segnalazione viene letta. Molte delle funzioni presenti nell'app sono nate da richieste di chi la usa: scrivere all'indirizzo indicato sopra è il modo più diretto per far sì che qualcosa cambi.</p>
