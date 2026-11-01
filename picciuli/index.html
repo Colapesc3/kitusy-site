@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pìcciuli — spese, budget e radar del mese · Kitusy</title>
+<meta name="description" content="Pìcciuli tiene sotto controllo spese, entrate e budget su iPhone, iPad e Mac, con un radar che ti dice a colpo d'occhio se sei in rotta. Senza pubblicità, senza collegamento alla banca: i dati restano tuoi.">
+<meta property="og:title" content="Pìcciuli — spese, budget e radar del mese">
+<meta property="og:description" content="Il mese in corso a colpo d'occhio, la previsione di fine mese e i tuoi dati che restano tuoi.">
+<meta property="og:image" content="https://kitusy.com/picciuli/img/og.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kitusy.com/picciuli/">
+<link rel="icon" type="image/svg+xml" href="../assets/kitusy-kite.svg">
+<link rel="stylesheet" href="../assets/fonts.css">
+<style>
+*{box-sizing:border-box}
+body{margin:0}
+:root{
+  --navy:#0B2A4A; --navy-2:#0F3560; --line:#24507d;
+  --ink:#FFFFFF; --muted:#A9C1DA;
+  --k-blue:#1F5FAF; --k-cyan:#26A9C9; --k-green:#4CAF7A; --k-amber:#F2A541; --k-red:#E4572E;
+  --oro:#FFD700;
+  --f-display:"Lexend","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --f-body:"Source Sans 3","Segoe UI",system-ui,sans-serif;
+  --s0:1rem; --s1:1.618rem; --s2:2.618rem; --s3:4.236rem;
+  color-scheme:dark;
+}
+html{background:var(--navy)}
+body{background:var(--navy);color:var(--ink);font-family:var(--f-body);font-size:1.0625rem;line-height:1.65}
+.wrap{max-width:68rem;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:var(--k-cyan)}
+a:focus-visible{outline:2px solid var(--k-amber);outline-offset:3px;border-radius:4px}
+header{border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:var(--s0);padding-block:.7rem}
+.brand{display:flex;align-items:center;gap:.6rem;color:var(--ink);text-decoration:none;font-family:var(--f-display);font-size:1.25rem}
+.brand img{width:1.75rem;height:auto;display:block}
+header nav{display:flex;gap:var(--s0)}
+header nav a{color:var(--muted);text-decoration:none;font-size:.95rem}
+header nav a:hover{color:var(--ink)}
+.eyebrow{font:600 .75rem/1 var(--f-body);letter-spacing:.14em;text-transform:uppercase;color:var(--k-amber);margin:0 0 .5rem}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance}
+h1{font-weight:400;font-size:clamp(2rem,5vw,3rem);line-height:1.1;margin:0 0 .6rem}
+h2{font-weight:500;font-size:clamp(1.4rem,3vw,1.9rem);line-height:1.2;margin:0 0 .7rem}
+h3{font-weight:600;font-size:1.05rem;margin:var(--s0) 0 .3rem}
+p{margin:0 0 var(--s0)}
+.muted{color:var(--muted)}
+.stripe{display:flex;height:4px;max-width:12rem;margin:0 0 var(--s1);border-radius:2px;overflow:hidden}
+.stripe i{flex:1}
+.hero{padding-block:var(--s2) var(--s1)}
+.hero .app{display:flex;align-items:center;gap:1rem;margin-bottom:var(--s0)}
+.hero .app img{width:4.2rem;height:4.2rem;border-radius:1rem;display:block;flex:none}
+.lead{font-size:1.2rem;color:var(--muted);max-width:44rem}
+.cta{display:flex;flex-wrap:wrap;align-items:center;gap:.8rem 1.2rem;margin:var(--s1) 0}
+.btn{display:inline-block;background:var(--k-amber);color:#0B2A4A;font-weight:700;text-decoration:none;padding:.65rem 1.2rem;border-radius:999px}
+.btn:hover{filter:brightness(1.08)}
+.link{color:var(--k-cyan);text-decoration:none;font-weight:600}
+.shot-hero{display:block;width:100%;height:auto;border-radius:18px;border:1px solid var(--line);margin-top:var(--s0)}
+.pluses{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:var(--s0);margin:var(--s1) 0 0;padding:0;list-style:none}
+.pluses li{background:var(--navy-2);border:1px solid var(--line);border-radius:14px;padding:var(--s0)}
+.pluses strong{display:block;font-family:var(--f-display);font-weight:600;margin-bottom:.2rem}
+section.feat{border-top:1px solid var(--line);padding-block:var(--s2)}
+.grid{display:grid;grid-template-columns:minmax(0,1fr) 17rem;gap:var(--s2);align-items:center}
+.grid.rev{grid-template-columns:17rem minmax(0,1fr)}
+.grid.rev .txt{order:2}
+.phone{display:block;width:100%;height:auto;border-radius:28px;border:6px solid #0b0f14;box-shadow:0 18px 40px rgba(0,0,0,.45)}
+.phones{display:grid;grid-template-columns:repeat(auto-fit,minmax(9.5rem,1fr));gap:var(--s1);margin-top:var(--s1)}
+.phones figure{margin:0}
+.phones figcaption{color:var(--muted);font-size:.92rem;margin-top:.6rem;text-align:center}
+.mac{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line);box-shadow:0 18px 40px rgba(0,0,0,.45);margin-top:var(--s1)}
+ul.list{margin:0 0 var(--s0);padding-left:1.2rem}
+ul.list li{margin-bottom:.35rem}
+.chip{display:inline-block;font-weight:700;color:var(--oro)}
+.card{background:var(--navy-2);border:1px solid var(--line);border-left:4px solid var(--k-amber);border-radius:12px;padding:var(--s0) var(--s1);margin:var(--s1) 0 0}
+.card p:last-child{margin:0}
+footer{border-top:1px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;gap:var(--s0);flex-wrap:wrap;padding-block:var(--s1);color:var(--muted);font-size:.85rem}
+footer a{color:var(--muted)}
+@media (max-width:760px){
+  .grid,.grid.rev{grid-template-columns:1fr}
+  .grid.rev .txt{order:0}
+  .grid .phone{max-width:17rem;margin:0 auto}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="brand" href="../" aria-label="Kitusy, pagina principale"><img src="../assets/kitusy-kite.svg" alt=""><span>Kitusy</span></a>
+    <nav><a href="supporto">Supporto</a><a href="../#app">Tutte le app</a></nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="app">
+        <img src="../assets/picciuli.png" alt="">
+        <div>
+          <p class="eyebrow">iPhone · iPad · Mac</p>
+          <h1>Pìcciuli</h1>
+        </div>
+      </div>
+      <div class="stripe" aria-hidden="true"><i style="background:var(--k-blue)"></i><i style="background:var(--k-cyan)"></i><i style="background:var(--k-green)"></i><i style="background:var(--k-amber)"></i><i style="background:var(--k-red)"></i></div>
+      <p class="lead">In siciliano, «pìcciuli» sono i soldi: quelli veri, che si contano a fine mese. Pìcciuli tiene sotto controllo spese, entrate e budget, con un radar che ti dice a colpo d'occhio se sei in rotta e dove stai andando.</p>
+      <div class="cta">
+        <a class="btn" href="https://apps.apple.com/it/app/p%C3%ACcciuli/id6793956859" target="_blank" rel="noopener">Scarica dall'App Store ↗</a>
+        <a class="link" href="#esempio">Provala con i dati di esempio</a>
+      </div>
+      <img class="shot-hero" src="img/hero.webp" width="1800" height="1012" alt="Il radar di Pìcciuli su iPad, Mac e iPhone">
+      <ul class="pluses">
+        <li><strong>Niente pubblicità</strong>Nessuna profilazione e nessun annuncio, mai.</li>
+        <li><strong>Niente banca</strong>I movimenti li inserisci, li importi da CSV o XLSX o li generano le ricorrenze.</li>
+        <li><strong>Dati tuoi</strong>Restano sul dispositivo e, se vuoi, nel tuo iCloud o nel cloud che scegli.</li>
+        <li><strong>Cifrati</strong>File dei dati e copie di sicurezza li apre solo Pìcciuli.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="feat" id="radar">
+    <div class="wrap grid">
+      <div class="txt">
+        <p class="eyebrow">Il radar del mese</p>
+        <h2>Dove vanno i tuoi soldi, a colpo d'occhio</h2>
+        <p>Ogni Area di spesa è una nuvola del suo colore. Più la nuvola si allunga, più ti avvicini al limite del mese.</p>
+        <ul class="list">
+          <li>L'<strong>anello dorato</strong> è il tetto mensile che hai scelto nel Budget.</li>
+          <li>L'<strong>arco bianco</strong> è il limite con il riporto: il risparmio dei mesi passati ti dà più spazio, uno sforamento te ne toglie.</li>
+          <li>Il <strong>punto luminoso</strong> è quanto hai speso finora; la scia arriva dove sarai a fine mese al ritmo attuale.</li>
+          <li>I <strong>puntini dorati</strong> sono le spese dei prossimi 7 giorni.</li>
+          <li>Sotto ogni Area leggi la <span class="chip">percentuale del limite</span> già usata e quanto hai speso rispetto al limite.</li>
+        </ul>
+      </div>
+      <img class="phone" src="img/radar.webp" width="560" height="1217" alt="Il radar delle Aree su iPhone" loading="lazy">
+    </div>
+  </section>
+
+  <section class="feat">
+    <div class="wrap">
+      <p class="eyebrow">Il cruscotto</p>
+      <h2>Quattro cerchi che rispondono a quattro domande</h2>
+      <div class="pluses" style="margin-top:0">
+        <div class="card" style="margin:0;border-left-color:var(--k-green)"><h3>Rotta</h3><p>Quanto hai speso dei soldi del mese rispetto ai giorni trascorsi e al tuo solito.</p></div>
+        <div class="card" style="margin:0;border-left-color:var(--k-red)"><h3>Superato</h3><p>Le Aree già oltre il limite, e quelle coperte dal risparmio delle altre.</p></div>
+        <div class="card" style="margin:0;border-left-color:var(--k-amber)"><h3>Supererà</h3><p>Le Aree che sforeranno entro fine mese, al ritmo attuale.</p></div>
+        <div class="card" style="margin:0;border-left-color:var(--k-cyan)"><h3>Disponibile</h3><p>Il saldo previsto a fine mese, comprese le spese con carta non ancora addebitate.</p></div>
+      </div>
+      <p class="muted" style="margin-top:var(--s1)">Il bordo del radar cambia colore con il saldo previsto: oro se copre le spese del mese dopo, ambra se è più basso, rosso se va sotto zero.</p>
+    </div>
+  </section>
+
+  <section class="feat">
+    <div class="wrap grid rev">
+      <img class="phone" src="img/radar-area.webp" width="560" height="1217" alt="Il radar di una singola Area con le sue categorie" loading="lazy">
+      <div class="txt">
+        <p class="eyebrow">Dentro un'Area</p>
+        <h2>Tocca un'Area e vedi le sue categorie</h2>
+        <p>Lo stesso radar, con una nuvola per ogni categoria dell'Area. Gli stessi quattro cerchi ti dicono cosa sta succedendo dentro l'Area e quanto margine ti resta prima del limite.</p>
+        <p>Sotto il radar, Pìcciuli ti suggerisce cosa fare: un limite troppo basso rispetto alle tue abitudini, una spesa insolita, un'Area senza tetto.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="feat">
+    <div class="wrap grid">
+      <div class="txt">
+        <p class="eyebrow">Nel tempo</p>
+        <h2>Premi Play e guarda scorrere i mesi</h2>
+        <p>Il radar ripercorre il passato, dal mese dei tuoi primi movimenti, e prosegue nei mesi futuri con una stima basata sulle tue abitudini, anche stagionali. Accanto al Play scegli la durata, da un mese a un anno, e il passo: 7, 14 o 30 giorni. Sul Mac basta la barra spaziatrice.</p>
+        <p>Con <strong>Eventi</strong> attivo, la simulazione si ferma sui cambiamenti importanti, come un picco isolato o una spesa che sale e resta alta, e alla fine ti mostra il riepilogo.</p>
+      </div>
+      <img class="phone" src="img/timeline.webp" width="560" height="1217" alt="Il radar durante la simulazione nei mesi futuri" loading="lazy">
+    </div>
+  </section>
+
+  <section class="feat">
+    <div class="wrap">
+      <p class="eyebrow">Su Mac</p>
+      <h2>Tutto lo spazio del grande schermo</h2>
+      <p>Su Mac i quattro cerchi stanno agli angoli del radar e il grafico della timeline scorre sotto, sempre in vista.</p>
+      <img class="mac" src="img/mac-radar.webp" width="1440" height="900" alt="Il radar di Pìcciuli su Mac" loading="lazy">
+    </div>
+  </section>
+
+  <section class="feat">
+    <div class="wrap">
+      <p class="eyebrow">Previsione, Budget e Report</p>
+      <h2>Sai già come finirà il mese, e i prossimi</h2>
+      <div class="phones">
+        <figure><img class="phone" src="img/previsione.webp" width="560" height="1217" alt="La Previsione del saldo" loading="lazy"><figcaption><strong>Previsione</strong>: il saldo dei prossimi mesi, con le uscite programmate e la Proiezione delle tue abitudini.</figcaption></figure>
+        <figure><img class="phone" src="img/budget.webp" width="560" height="1217" alt="Il Budget con i cursori dei tetti" loading="lazy"><figcaption><strong>Budget</strong>: un tetto per ogni categoria, con le abitudini a fianco per scegliere un limite realistico.</figcaption></figure>
+        <figure><img class="phone" src="img/report.webp" width="560" height="1217" alt="Il Report per Aree di spesa" loading="lazy"><figcaption><strong>Report</strong>: settimana, mese, trimestre o anno, per categoria, Area e conto.</figcaption></figure>
+        <figure><img class="phone" src="img/scenari.webp" width="560" height="1217" alt="Gli Scenari nella Previsione" loading="lazy"><figcaption><strong>Scenari</strong>: un prestito, un lavoro di casa, un piano di risparmio, prima di decidere.</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="feat">
+    <div class="wrap grid rev">
+      <img class="phone" src="img/scadenze.webp" width="560" height="1217" alt="Le scadenze dei prossimi 7 giorni e il Termometro della spesa" loading="lazy">
+      <div class="txt">
+        <p class="eyebrow">Ogni giorno</p>
+        <h2>Movimenti, scadenze e scontrini</h2>
+        <ul class="list">
+          <li>Conti, contanti e carte di credito in un unico posto, con l'addebito della carta calcolato da solo.</li>
+          <li>Movimenti ricorrenti: stipendio, rate, abbonamenti, bollette. Le prossime scadenze compaiono in cima e, se vuoi, nel calendario.</li>
+          <li>Scontrini a raffica: fotografane più di uno, Pìcciuli legge importo, data e negozio e te li propone in un elenco da controllare.</li>
+          <li>Importazione dei file CSV e XLSX del tuo home banking, con l'avviso dei possibili doppioni.</li>
+          <li>Widget con il mese in corso e le prossime scadenze.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="feat">
+    <div class="wrap grid">
+      <div class="txt">
+        <p class="eyebrow">Partita IVA</p>
+        <h2>Personale e professionale nella stessa app</h2>
+        <p>Conti, categorie e movimenti possono appartenere alla gestione personale, a quella professionale o a entrambe. Un selettore filtra tutto ciò che vedi.</p>
+        <p>Sui movimenti professionali indichi aliquota e numero di fattura; il riepilogo mostra l'IVA a debito, quella a credito e la differenza.</p>
+      </div>
+      <img class="phone" src="img/iva.webp" width="560" height="1217" alt="Il riepilogo IVA nella gestione professionale" loading="lazy">
+    </div>
+  </section>
+
+  <section class="feat" id="dati">
+    <div class="wrap">
+      <p class="eyebrow">Privacy</p>
+      <h2>I tuoi dati restano tuoi</h2>
+      <ul class="list">
+        <li>Pìcciuli non ha server: lo sviluppatore non vede i tuoi dati e non li riceve in alcuna forma.</li>
+        <li>Puoi sincronizzare iPhone, iPad e Mac con il tuo iCloud personale, oppure con un file nel cloud che scegli tu (Google Drive, Dropbox, OneDrive…).</li>
+        <li>I file dei dati e le copie di sicurezza sono cifrati sul dispositivo: li apre solo Pìcciuli.</li>
+        <li>L'intelligenza artificiale è facoltativa: sui dispositivi compatibili usa Apple Intelligence sul dispositivo; altrimenti la tua chiave Claude o OpenAI, e al fornitore arrivano solo riepiloghi.</li>
+      </ul>
+      <p><a href="privacy">Leggi l'informativa sulla privacy</a></p>
+    </div>
+  </section>
+
+  <section class="feat" id="esempio">
+    <div class="wrap">
+      <p class="eyebrow">Prova senza rischi</p>
+      <h2>Esplora con i dati di esempio</h2>
+      <p>Vuoi vedere il radar pieno prima di inserire i tuoi movimenti? Apri Pìcciuli e scegli <strong>Impostazioni → Informazioni → Esplora con dati di esempio</strong>, oppure il pulsante nella procedura iniziale. I tuoi dati restano da parte, intatti, e tornano quando esci dall'esempio.</p>
+      <div class="card">
+        <p><strong>Pìcciuli è gratuita</strong>, senza pubblicità e senza abbonamenti. Funziona su iPhone, iPad e Mac; la versione per Android è in preparazione.</p>
+      </div>
+      <div class="cta">
+        <a class="btn" href="https://apps.apple.com/it/app/p%C3%ACcciuli/id6793956859" target="_blank" rel="noopener">Scarica dall'App Store ↗</a>
+        <a class="link" href="supporto">Domande e assistenza</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Kitusy · <a href="../collabora">Collabora con noi</a> · <a href="../privacy">Privacy del sito</a></span>
+    <span><a href="supporto">Supporto</a> · <a href="privacy">Informativa sulla privacy</a> · <a href="../">kitusy.com</a></span>
+  </div>
+</footer>
+</body>
+</html>
