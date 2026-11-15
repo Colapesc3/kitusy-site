@@ -75,6 +75,7 @@ h2{font-family:var(--f-display);font-weight:400;font-size:clamp(1.6rem,3vw,2.2re
 .status{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:.6rem;flex-wrap:wrap;padding-top:.4rem;border-top:1px solid var(--line)}
 .pill{font:600 .75rem/1 var(--f-body);letter-spacing:.06em;text-transform:uppercase;padding:.4rem .65rem;border-radius:999px}
 .pill.live{background:color-mix(in srgb,var(--k-green) 22%,transparent);color:#8fe0b2}
+.pill.test{background:color-mix(in srgb,var(--k-cyan) 22%,transparent);color:#8fdcef}
 .pill.dev{background:color-mix(in srgb,var(--k-amber) 20%,transparent);color:#f7c47d}
 .btn{display:inline-flex;align-items:center;gap:.4rem;background:var(--ink);color:var(--navy);text-decoration:none;font-weight:600;font-size:.9rem;padding:.5rem .9rem;border-radius:999px}
 .btn:hover{background:var(--k-cyan);color:#fff}
@@ -171,8 +172,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:var(--s0);flex-wrap:
             <div><h3>Cartanza</h3><p class="meaning" data-i18n="cartanza_meaning">giochi di carte italiani</p></div>
           </div>
           <p class="desc" data-i18n="cartanza_desc">Scopa e Briscola con gli amici, da vicino e da lontano: tavoli aperti o sfide private, messaggi vocali e foto durante la partita, come al tavolino del bar.</p>
-          <ul class="platforms"><li>iPhone</li><li>iPad</li><li>Mac</li></ul>
-          <div class="status"><span class="pill dev" data-i18n="status_dev">In sviluppo</span></div>
+          <ul class="platforms"><li>Android</li><li>iPhone</li></ul>
+          <div class="status">
+            <span class="pill test" data-i18n="status_test">In fase di test</span>
+            <a class="link-sm" href="cartanza/" data-i18n="discover">Scopri</a>
+            <a class="btn" href="cartanza/#prova" data-i18n="join_test">Partecipa al test</a>
+          </div>
         </article>
         <article class="app">
           <div class="app-head">
@@ -243,7 +248,7 @@ const T={
   cuntari_desc:"The writing tool for people who build noir and crime stories: a visual mind map, plots and characters always under control, an AI assistant at your side.",
   aunne_meaning:"“where is it?”, in Sicilian",
   aunne_desc:"Tidies up files scattered across drives, USB sticks, phone and cloud: finds duplicates, rebuilds dates and suggests a chronological archive, without formatting anything.",
-  status_live:"Available",privacy:"Privacy",support:"Support",discover:"Learn more",status_dev:"In development",
+  status_live:"Available",privacy:"Privacy",support:"Support",discover:"Learn more",status_dev:"In development",status_test:"In testing",join_test:"Join the test",
   more:"More apps are on the way, including tools for building professionals.",
   idea_eyebrow:"Philosophy",idea_title:"Light as a kite",
   i1_t:"Easy",i1_d:"Every feature makes sense the first time you use it. If it needs a manual, we designed it wrong.",

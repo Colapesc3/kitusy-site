@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cartanza — Scopa e Briscola con le carte siciliane · Kitusy</title>
+<meta name="description" content="Cartanza: Scopa e Briscola con le carte siciliane, contro il computer o con gli amici. Un avatar che ti somiglia e si muove con il tuo volto, i segni al compagno come al bar, regali siciliani. In prova su Android e iPhone.">
+<meta property="og:title" content="Cartanza — Scopa e Briscola con le carte siciliane">
+<meta property="og:description" content="Il tavolino del bar, sul telefono. Partecipa alla prova.">
+<meta property="og:image" content="https://kitusy.com/cartanza/img/og.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kitusy.com/cartanza/">
+<link rel="icon" type="image/svg+xml" href="/assets/kitusy-kite.svg">
+<link rel="stylesheet" href="/assets/fonts.css">
+<style>
+*{box-sizing:border-box}
+body{margin:0}
+:root{
+  --navy:#0B2A4A; --navy-2:#0F3560; --line:#24507d;
+  --ink:#FFFFFF; --muted:#A9C1DA;
+  --k-blue:#1F5FAF; --k-cyan:#26A9C9; --k-green:#4CAF7A; --k-amber:#F2A541; --k-red:#E4572E;
+  --oro:#FFD700;
+  --f-display:"Lexend","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --f-body:"Source Sans 3","Segoe UI",system-ui,sans-serif;
+  --s0:1rem; --s1:1.618rem; --s2:2.618rem; --s3:4.236rem;
+  color-scheme:dark;
+}
+html{background:var(--navy)}
+body{background:var(--navy);color:var(--ink);font-family:var(--f-body);font-size:1.0625rem;line-height:1.65}
+.wrap{max-width:68rem;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:var(--k-cyan)}
+a:focus-visible{outline:2px solid var(--k-amber);outline-offset:3px;border-radius:4px}
+header{border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:var(--s0);padding-block:.7rem}
+.brand{display:flex;align-items:center;gap:.6rem;color:var(--ink);text-decoration:none;font-family:var(--f-display);font-size:1.25rem}
+.brand img{width:1.75rem;height:auto;display:block}
+header nav{display:flex;gap:var(--s0)}
+header nav a{color:var(--muted);text-decoration:none;font-size:.95rem}
+header nav a:hover{color:var(--ink)}
+.eyebrow{font:600 .75rem/1 var(--f-body);letter-spacing:.14em;text-transform:uppercase;color:var(--k-amber);margin:0 0 .5rem}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance}
+h1{font-weight:400;font-size:clamp(2rem,5vw,3rem);line-height:1.1;margin:0 0 .6rem}
+h2{font-weight:500;font-size:clamp(1.4rem,3vw,1.9rem);line-height:1.2;margin:0 0 .7rem}
+h3{font-weight:600;font-size:1.05rem;margin:var(--s0) 0 .3rem}
+p{margin:0 0 var(--s0)}
+.muted{color:var(--muted)}
+.stripe{display:flex;height:4px;max-width:12rem;margin:0 0 var(--s1);border-radius:2px;overflow:hidden}
+.stripe i{flex:1}
+.hero{padding-block:var(--s2) var(--s1)}
+.hero .app{display:flex;align-items:center;gap:1rem;margin-bottom:var(--s0)}
+.hero .app img{width:4.2rem;height:4.2rem;border-radius:1rem;display:block;flex:none}
+.lead{font-size:1.2rem;color:var(--muted);max-width:44rem}
+.cta{display:flex;flex-wrap:wrap;align-items:center;gap:.8rem 1.2rem;margin:var(--s1) 0}
+.btn{display:inline-block;background:var(--k-amber);color:#0B2A4A;font-weight:700;text-decoration:none;padding:.65rem 1.2rem;border-radius:999px}
+.btn:hover{filter:brightness(1.08)}
+.link{color:var(--k-cyan);text-decoration:none;font-weight:600}
+.shot-hero{display:block;width:100%;height:auto;border-radius:18px;border:1px solid var(--line);margin-top:var(--s0)}
+.pluses{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:var(--s0);margin:var(--s1) 0 0;padding:0;list-style:none}
+.pluses li{background:var(--navy-2);border:1px solid var(--line);border-radius:14px;padding:var(--s0)}
+.pluses strong{display:block;font-family:var(--f-display);font-weight:600;margin-bottom:.2rem}
+section.feat{border-top:1px solid var(--line);padding-block:var(--s2)}
+.grid{display:grid;grid-template-columns:minmax(0,1fr) 17rem;gap:var(--s2);align-items:center}
+.grid.rev{grid-template-columns:17rem minmax(0,1fr)}
+.grid.rev .txt{order:2}
+.phone{display:block;width:100%;height:auto;border-radius:28px;border:6px solid #0b0f14;box-shadow:0 18px 40px rgba(0,0,0,.45)}
+.phones{display:grid;grid-template-columns:repeat(auto-fit,minmax(9.5rem,1fr));gap:var(--s1);margin-top:var(--s1)}
+.phones figure{margin:0}
+.phones figcaption{color:var(--muted);font-size:.92rem;margin-top:.6rem;text-align:center}
+.mac{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line);box-shadow:0 18px 40px rgba(0,0,0,.45);margin-top:var(--s1)}
+ul.list{margin:0 0 var(--s0);padding-left:1.2rem}
+ul.list li{margin-bottom:.35rem}
+.chip{display:inline-block;font-weight:700;color:var(--oro)}
+.card{background:var(--navy-2);border:1px solid var(--line);border-left:4px solid var(--k-amber);border-radius:12px;padding:var(--s0) var(--s1);margin:var(--s1) 0 0}
+.card p:last-child{margin:0}
+footer{border-top:1px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;gap:var(--s0);flex-wrap:wrap;padding-block:var(--s1);color:var(--muted);font-size:.85rem}
+footer a{color:var(--muted)}
+@media (max-width:760px){
+  .grid,.grid.rev{grid-template-columns:1fr}
+  .grid.rev .txt{order:0}
+  .grid .phone{max-width:17rem;margin:0 auto}
+}
+.disabled{opacity:.5;pointer-events:none}
+.passi{counter-reset:p;list-style:none;padding:0;margin:var(--s0) 0}
+.passi li{counter-increment:p;position:relative;padding-left:2.6rem;margin-bottom:var(--s0)}
+.passi li::before{content:counter(p);position:absolute;left:0;top:-.1rem;width:1.9rem;height:1.9rem;border-radius:50%;background:var(--k-amber);color:#0B2A4A;font-weight:700;display:flex;align-items:center;justify-content:center}
+.prova{display:grid;grid-template-columns:repeat(auto-fit,minmax(18rem,1fr));gap:var(--s1);margin-top:var(--s1)}
+.prova .card{margin:0}
+.nota{font-size:.92rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Kitusy, pagina principale"><img src="/assets/kitusy-kite.svg" alt=""><span>Kitusy</span></a>
+    <nav><a href="#prova">Partecipa alla prova</a><a href="/#app">Tutte le app</a></nav>
+  </div>
+</header>
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="app">
+        <img src="/assets/cartanza.png" alt="">
+        <div>
+          <p class="eyebrow">Android · iPhone · In fase di test</p>
+          <h1>Cartanza</h1>
+        </div>
+      </div>
+      <div class="stripe" aria-hidden="true"><i style="background:var(--k-blue)"></i><i style="background:var(--k-cyan)"></i><i style="background:var(--k-green)"></i><i style="background:var(--k-amber)"></i><i style="background:var(--k-red)"></i></div>
+      <p class="lead">Scopa e Briscola con le carte siciliane, come al tavolino del bar: con gli amici di sempre o con chi incontri al tavolo, da vicino e da lontano. Cartanza è in prova e cerchiamo giocatori che ci aiutino a migliorarla.</p>
+      <div class="cta">
+        <a class="btn" href="#prova">Partecipa alla prova</a>
+        <a class="link" href="#diversa">Cosa la rende diversa</a>
+      </div>
+      <ul class="pluses">
+        <li><strong>Gratuita</strong>Si gioca senza pagare. Nessuna puntata, nessun premio in denaro.</li>
+        <li><strong>Facile da leggere</strong>Carte grandi e testi chiari, pensati per giocare con calma.</li>
+        <li><strong>Anche senza internet</strong>Contro il computer si gioca sempre, ovunque.</li>
+        <li><strong>Mai pubblicità in partita</strong>Un piccolo banner solo nei menu, che si può togliere.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="feat" id="diversa">
+    <div class="wrap grid">
+      <div class="txt">
+        <p class="eyebrow">Il mazzo</p>
+        <h2>Le carte siciliane, disegnate a mano</h2>
+        <p>Un mazzo originale di quaranta carte, con i semi grandi e ben leggibili, e tre dorsi da scegliere: Siciliano, Gotico e Azzurro. Il dorso che scegli diventa anche lo sfondo dell'app.</p>
+        <ul class="list">
+          <li>Si tocca una carta per sceglierla e la si tocca di nuovo per giocarla: niente mosse sbagliate per sbaglio.</li>
+          <li>A fine mano il riepilogo di carte, denari, settebello, primiera e scope.</li>
+          <li>Scopa e Briscola, a due o a quattro a coppie.</li>
+        </ul>
+      </div>
+      <img class="phone" src="/cartanza/img/scopa.webp" width="540" height="1080" alt="Una partita a Scopa a due" loading="lazy">
+    </div>
+  </section>
+
+  <section class="feat">
+    <div class="wrap grid rev">
+      <img class="phone" src="/cartanza/img/avatar.webp" width="540" height="1080" alt="Il proprio avatar e le sue espressioni" loading="lazy">
+      <div class="txt">
+        <p class="eyebrow">Il tuo avatar</p>
+        <h2>Un volto che ti somiglia, e che si muove come te</h2>
+        <p>Scegli uomo o donna, lo stile, la pelle, i capelli e i dettagli: baffi, coppola, cappellino, collana di perle, perfino i bigodini. Il tuo avatar sorride quando fai scopa e si dispiace quando la subisci.</p>
+        <p>Se vuoi, si muove con le espressioni del tuo viso: sorridi, strizzi l'occhio, giri la testa, e al tavolo lo vedono gli altri. <strong>Nessuna immagine esce dal telefono</strong>: agli altri arrivano solo pochi numeri che animano il disegno.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="feat">
+    <div class="wrap grid">
+      <div class="txt">
+        <p class="eyebrow">Il gioco a quattro</p>
+        <h2>I segni al compagno, come al bar</h2>
+        <p>Nella partita a coppie si fanno i segni, come si è sempre fatto: arricciare il naso, strizzare l'occhio, voltare il capo. Tutti al tavolo li vedono, ma il significato lo conoscete solo tu e il tuo compagno.</p>
+        <ul class="list">
+          <li><strong>Accordo Segni</strong>: scegli fino a cinque gesti e dai a ciascuno un significato; lo riceve solo il tuo compagno.</li>
+          <li>Ti siedi al posto che vuoi e scegli con chi fare coppia.</li>
+          <li>Se qualcuno lascia il tavolo, al suo posto gioca il computer: <strong>la partita non si interrompe</strong> per gli altri.</li>
+        </ul>
+      </div>
+      <img class="phone" src="/cartanza/img/scopa4.webp" width="540" height="1080" alt="Una partita a Scopa a quattro, a coppie" loading="lazy">
+    </div>
+  </section>
+
+  <section class="feat">
+    <div class="wrap">
+      <p class="eyebrow">In compagnia</p>
+      <h2>Un gioco per stare insieme, non solo per vincere</h2>
+      <div class="phones">
+        <figure><img class="phone" src="/cartanza/img/amici.webp" width="540" height="1080" alt="Gli amici e un invito a giocare" loading="lazy"><figcaption><strong>Amici</strong>: li trovi con un codice, vedi chi è collegato e li inviti al tuo tavolo.</figcaption></figure>
+        <figure><img class="phone" src="/cartanza/img/regali.webp" width="540" height="1080" alt="Il catalogo dei regali" loading="lazy"><figcaption><strong>Regali</strong>: un cannolo, la granita con brioche, il ferro di cavallo… arrivano sul tavolo e restano nella tua Vetrina.</figcaption></figure>
+        <figure><img class="phone" src="/cartanza/img/menu.webp" width="540" height="1080" alt="Il menu di Cartanza" loading="lazy"><figcaption><strong>Tra amici</strong>: in partita chat, foto e messaggi vocali, solo tra chi vi siete scelti.</figcaption></figure>
+      </div>
+      <div class="pluses" style="margin-top:var(--s1)">
+        <div class="card" style="margin:0;border-left-color:var(--k-green)"><h3>Riconoscimenti</h3><p>A fine partita puoi dire chi è stato affidabile, simpatico e amabile.</p></div>
+        <div class="card" style="margin:0;border-left-color:var(--k-cyan)"><h3>Il timer, se volete</h3><p>Tra amici, a due, potete giocare senza tempo per ogni mossa, con calma.</p></div>
+        <div class="card" style="margin:0;border-left-color:var(--k-red)"><h3>Rispetto</h3><p>Segnala e Blocca sempre a portata di mano, chat senza parole urlate.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="feat" id="prova">
+    <div class="wrap">
+      <p class="eyebrow">Partecipa alla prova</p>
+      <h2>Aiutaci a migliorarla</h2>
+      <p>Per pubblicarla, Google ci chiede che almeno dodici persone la provino per quattordici giorni di fila. <strong>Ti chiediamo di tenerla installata per almeno 14 giorni e di giocare ogni tanto</strong>, anche solo una partita contro il computer. Se qualcosa non va, scrivici: ogni segnalazione ci aiuta.</p>
+      <div class="prova">
+        <div class="card" style="border-left-color:var(--k-green)">
+          <h3>Telefono Android</h3>
+          <ol class="passi">
+            <li><a class="btn" href="https://groups.google.com/g/picciuli-tester" target="_blank" rel="noopener">Iscriviti al gruppo dei tester ↗</a><br><span class="nota">Con lo stesso account Google che usi sul telefono.</span></li>
+            <li><a class="btn disabled" id="android" href="#prova">Scarica la prova</a><br><span class="nota">Link in arrivo. Poi tocca «Diventa un tester» e installa Cartanza da Google Play.</span></li>
+          </ol>
+        </div>
+        <div class="card" style="border-left-color:var(--k-cyan)">
+          <h3>iPhone</h3>
+          <ol class="passi">
+            <li><a class="btn" href="https://apps.apple.com/it/app/testflight/id899247664" target="_blank" rel="noopener">Installa TestFlight ↗</a><br><span class="nota">L'app gratuita di Apple per le versioni di prova.</span></li>
+            <li><a class="btn disabled" id="iphone" href="#prova">Scarica la prova</a><br><span class="nota">Link in arrivo. Si apre in TestFlight: tocca «Accetta» e poi «Installa».</span></li>
+          </ol>
+        </div>
+      </div>
+      <p class="nota" style="margin-top:var(--s1)">Domande o problemi: <a href="mailto:supporto@kitusy.com">supporto@kitusy.com</a> · <a href="https://cartanza-8a32e.web.app/privacy">Informativa sulla privacy</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Kitusy · <a href="/collabora">Collabora con noi</a> · <a href="/privacy">Privacy del sito</a></span>
+    <span><a href="https://cartanza-8a32e.web.app/privacy">Informativa di Cartanza</a> · <a href="/">kitusy.com</a></span>
+  </div>
+</footer>
+</body>
+</html>
