@@ -79,7 +79,8 @@ Stato attuale: Pìcciuli (disponibile, App Store), Cartanza (in fase di test, Te
 - Social: Instagram `@kitusyapp_`, Facebook `facebook.com/Kitusyapp`, TikTok `@kitusy`, X `@kitusyapp_`.
 - Pìcciuli su App Store: `https://apps.apple.com/it/app/p%C3%ACcciuli/id6793956859`.
 - Cartanza su TestFlight: `https://testflight.apple.com/join/YKyRn8wZ`.
-- Tester Android di Pìcciuli: `https://groups.google.com/g/picciuli-tester`.
+- Tester Android (gruppo unico per tutte le app, `picciuli-tester@googlegroups.com`): `https://groups.google.com/g/picciuli-tester`.
+- Cartanza, test su Google Play (pacchetto `com.giuseppesteno.cartanza`): `https://play.google.com/apps/testing/com.giuseppesteno.cartanza`.
 
 ## Vincoli esterni
 
@@ -97,6 +98,7 @@ Stato attuale: Pìcciuli (disponibile, App Store), Cartanza (in fase di test, Te
 - 15–17 nov 2026 — Pagina di Cartanza con iscrizione al test; privacy ed eliminazione account; KitMetry in home; testi Filosofia corretti; pulsante TestFlight.
 - 19 nov 2026 — Privacy di Cartanza: pubblicità tolta per 6 mesi o un anno.
 - 20 nov 2026 — Aggiunto questo file; `_redirects` per non esporlo sul web.
+- 20 nov 2026 — Cartanza: pulsante Android «Scarica la prova» attivo; nota sul gruppo dei tester condiviso con Pìcciuli.
 
 ## Da sistemare
 
